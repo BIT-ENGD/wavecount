@@ -137,12 +137,16 @@ def dotest(SRC):
 if __name__ == "__main__":
 
     dotest(SRCPATH)
+    print("*"*100)
     UNIFILE=set(FILEMD5)
     if( len(UNIFILE) != len(FILEMD5)):
         print("not all file is unique, total file: {}, unique file: {}".format(len(FILEMD5),len(UNIFILE)))
+    else:
+        print("unique file: {}".format(len(UNIFILE)))
     
     print("Total times: {:.2f} (hours), Unique Time:{:.2f} (hours)".format(TOTALTIME/3600,UNITIME/3600))
 
     print("BadFileList, len: {}, Badfile:{}".format(len(BADFILES),BADFILES))
     
 
+    print("*"*100)
