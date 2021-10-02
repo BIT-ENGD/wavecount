@@ -17,6 +17,7 @@ BADFILES=[]  #坏文件检测
 GOODFILES=[]
 TOTALTIME=0
 UNITIME=0
+TARFILES=0
 
 def calmd5(srcfile):
     with open(srcfile, 'rb') as fp:
@@ -107,6 +108,7 @@ def playwave(srcfile,output):
 
 def dotest(SRC):
     global BADFILES
+    global TARFILES
     g=os.walk(SRC)
     for path,dir_list,file_list  in g:
              
@@ -124,6 +126,7 @@ def dotest(SRC):
 
                 untar(fullfile,TESTDIR)
                 testdir(TESTDIR,fullfile)
+                TARFILES+=1
             elif( fileinfo.extension == "wav"):
                 testfile(fullfile,"")
             else:
@@ -148,5 +151,5 @@ if __name__ == "__main__":
 
     print("BadFileList, len: {}, Badfile:{}".format(len(BADFILES),BADFILES))
     
-
+    print("Tar file number: {}".format(TARFILES))
     print("*"*100)
