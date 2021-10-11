@@ -6,9 +6,9 @@ import hashlib
 import pyaudio,wave
 # apt install portaudio19-dev
 # pip install pyaudio
-SRCPATH="/data/linux/audio/test" #500.chinese.wav"
+SRCPATH="/data/linux/1whr/" #500.chinese.wav"
 
-TESTDIR="/data/linux/audio/tmpfile_wave_count"
+TESTDIR="/data/wd1t/temp/"
 
 
 
